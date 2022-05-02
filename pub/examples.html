@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LyriChord.js Examples</title>
+        <link rel="stylesheet" type="text/css" href="./css/lyrichord.css">
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script defer type="text/javascript" src='./js/lyrichord.js'></script>
+        <script defer type="text/javascript" src='./js/examples.js'></script>
+    </head>
+    <body>
+        <div style="margin-top: 5%;">
+            <div style="margin-left: 20%; width: 60%;">
+                <p>In this example an entire song sheet with popup and chord section options on is generated.</p>
+                <p>Some features of the library demonstrated in this example are:</p>
+                <ul>
+                    <li>show/hide toggle for the chords section which shows/hides the section when clicked on</li>
+                    <li>some chords with multiple shapes displayed as carousel such as the <strong>G</strong> chord
+                        (click on the small squares above the chord in order to switch between the chord shapes).</li>
+                    <li>Barre chords (e.g. the F chord), chords starting at fret numbers > 0 (e.g. Am chord) and chords with mute/open strings (e.g. Em)</li>
+                    <li>Popup display of chords in the song content portion: hover over the chord names and the chord shape will be displayed.</li>
+                    <li>Option to switch between popup and regular display: Check or uncheck the checkbox <code>display chords as popups</code>.</li>
+                </ul>
+                <p>This example is created using the following code:</p>
+<button id="code1-button">Click to show code</button>
+<div id="code1" class="display-none">
+<blockquote>
+<pre>
+'use strict';
+
+const song_info = new GeneralSongInfo('Flying', 'Anathema', 'Hindsight', 'eadgbe', 4, 'c');
+const song_container = document.createElement('div');
+song_container.setAttribute('style', 'display: flex; justify-content: center;')
+const Am = new Chord('Am', [-1, 0, 2, 2, 1, 0]);
+const Am_2 = new Chord('Am', [5, 7, 7, 5, 5, 5], {5: [1, 6]});
+const Em = new Chord('Em', [0, 2, 2, 1, 0, 0]);
+const F = new Chord('F', [1, 3, 3, 2, 1, 1], {1: [1, 6]});
+const G = new Chord('G', [3, 2, 0, 0, 0, 3]);
+G.add_shape([3, 2, 0, 0, 3, 3]);
+const verse1 = new LyricChordGroup(
+    'VERSE',
+    [new LyricChordLine(
+        [new LyricChordPair('Started a search to no avail a light that shines behind the veil,', Am),
+         new LyricChordPair('trying to find it', Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('And all around us everywhere is all that we could ever share,', Am),
+        new LyricChordPair('if only we could see it', Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('Believe there\'s true thoughts', Am),
+         new LyricChordPair('beyond me', Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('Life ever changing weaving', Am),
+         new LyricChordPair('destiny', Em)])
+    ]
+)
+const chorus1 = new LyricChordGroup(
+    'CHORUS',
+    [new LyricChordLine(
+        [new LyricChordPair('It feels like i\'m'),
+         new LyricChordPair('flying,', F),
+         new LyricChordPair('above you', Am_2),
+         new LyricChordPair(null, Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('Dream that i\'m '),
+         new LyricChordPair('dying, to', F),
+         new LyricChordPair('find the', Am_2),
+         new LyricChordPair('truth', Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('Seems like you\'re'),
+        new LyricChordPair('trying, to', F),
+        new LyricChordPair('bring me down', G)]),
+     new LyricChordLine(
+        [new LyricChordPair('Back down to'),
+         new LyricChordPair('earth', F),
+         new LyricChordPair('back down to'),
+         new LyricChordPair('earth', Em)])
+    ]
+)
+const verse2 = new LyricChordGroup(
+    'VERSE',
+    [new LyricChordLine(
+        [new LyricChordPair('Layers of dust and yesterdays shadows fading in the haze,', Am),
+         new LyricChordPair('what i couldn\'t say', Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('Though i said my hands were tied time i changed and now i find,', Am),
+        new LyricChordPair('free for the first time', Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('Feel so close to', Am),
+         new LyricChordPair('everything now', Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('Strange how life makes', Am),
+         new LyricChordPair('sense in time', Em)])
+    ]
+)
+
+const chorus2 = new LyricChordGroup(
+    'CHORUS',
+    [new LyricChordLine(
+        [new LyricChordPair('It feels like i\'m'),
+         new LyricChordPair('flying,', F),
+         new LyricChordPair('above you', Am_2),
+         new LyricChordPair(null, Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('Dream that i\'m '),
+         new LyricChordPair('dying, to', F),
+         new LyricChordPair('find the', Am_2),
+         new LyricChordPair('truth', Em)]),
+     new LyricChordLine(
+        [new LyricChordPair('Seems like you\'re'),
+        new LyricChordPair('trying (trying, trying, trying...), to', F),
+        new LyricChordPair('bring me down', G)]),
+     new LyricChordLine(
+        [new LyricChordPair('Back down to'),
+         new LyricChordPair('earth', F),
+         new LyricChordPair('back down to'),
+         new LyricChordPair('earth', G)]),
+    new LyricChordLine(
+        [new LyricChordPair('Back down to'),
+         new LyricChordPair('earth', F),
+         new LyricChordPair('back down to'),
+         new LyricChordPair('earth', G),
+         new LyricChordPair('BACK DOOOWN!!!', F),
+        ])
+    ]
+)
+const solo = new LyricChordGroup(
+    'SOLO',
+    [new LyricChordLine(
+        [new LyricChordPair(null, F),
+         new LyricChordPair(null, Em),
+         new LyricChordPair('(x2)')]),
+     new LyricChordLine(
+        [new LyricChordPair(null, F),
+         new LyricChordPair(null, Am),
+         new LyricChordPair(null, Em),
+         new LyricChordPair('(x4)')])
+    ] 
+)
+const content = new SongContent([verse1, chorus1, verse2, chorus2, solo]);
+const song = new SongSheet(song_info, content, true);
+song.display(song_container);
+const body = document.querySelector('body');
+body.appendChild(song_container)
+</pre>
+                </blockquote>
+            </div>
+            </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <h2>Learn to play "Flying" by Anathema on the guitar!</h2>
+            <p style="font-size:x-small;">[Posted on April 16, 2022]</p>
+            <p>This is an easy acoustic song that can be learned by all levels of players.<br>Hover over each chord to view the chord shape for a hint.</p>
+        </div>
+        </div>
+    </body>
+</html>

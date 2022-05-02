@@ -1,0 +1,24 @@
+{
+  "name": "lyrichord.js",
+  "version": "1.0.0",
+  "description": "A library that aids developers in composing music sheets composed of lyrics and chords.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc309-winter-2022/js-library-momajjed.git"
+  },
+  "author": "Arina Momajjed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csc309-winter-2022/js-library-momajjed/issues"
+  },
+  "homepage": "https://github.com/csc309-winter-2022/js-library-momajjed#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "request": "^2.88.2"
+  }
+}

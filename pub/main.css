@@ -1,0 +1,53 @@
+body {
+	font-family: 'Courier New';
+}
+
+.navbar {
+    margin: 0% 10% 0% 10%;
+}
+
+.navbar-brand {
+	font-size: 3em;
+    color: black;
+	font-weight: bolder;
+}
+
+.navbar-brand a {
+    color: black;
+}
+
+.navbar-brand a:hover {
+    color: dimgray;
+}
+
+.banner .nav a {
+    font-size: 1.5em;
+	color: black;
+}
+
+.banner .nav a:hover {
+    color: dimgray;
+    text-decoration: underline;
+}
+
+.banner .nav a:visited, a:active {
+    color: black;
+}
+
+.about {
+	margin-top: 10%;
+	transform: translateY(-30%);
+    letter-spacing: 1px;
+    text-align: center;
+}
+.about h1 {
+	font-size: 4em;
+    font-weight: bold;
+    cursor: default;
+	color: black;
+}
+
+.description {
+    font-size: 2em;
+	color: black;
+}

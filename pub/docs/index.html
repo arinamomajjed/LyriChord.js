@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LyriChord.js Documentation - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">LyriChord.js Documentation</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Chord.html">Chord</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Chord.html#add_shape">add_shape</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Chord.html#display">display</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="GeneralSongInfo.html">GeneralSongInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="GeneralSongInfo.html#display">display</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="LyricChordGroup.html">LyricChordGroup</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="LyricChordGroup.html#addLine">addLine</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="LyricChordGroup.html#display">display</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="LyricChordLine.html">LyricChordLine</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="LyricChordLine.html#addPair">addPair</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="LyricChordLine.html#display">display</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="LyricChordPair.html">LyricChordPair</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="LyricChordPair.html#display">display</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SongContent.html">SongContent</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SongContent.html#display">display</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SongContent.html#generateDOM">generateDOM</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SongSheet.html">SongSheet</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SongSheet.html#display">display</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SongSheet.html#display_chords">display_chords</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">LyriChord.js Documentation</h1>
+    
+    <div id="getting-started">
+      <h1 class="page-title">Getting Started</h1>
+      <p class="summary">This page shows how to download and use the <code>LyriChord.js</code> library in your program.</code></p>
+      <h2>Setup</h2>
+      <h3 class="subsection-title">Static Download</h3>
+      <p class="summary">Download the following source code files to your project's directory:</p>
+      <ul>
+        <li>Library JavaScript file: <a href="https://github.com/csc309-winter-2022/js-library-momajjed/blob/main/pub/js/lyrichord.js"><code>lyrichord.js</code></a></li>
+        <li>Library CSS file: <a href="https://github.com/csc309-winter-2022/js-library-momajjed/blob/main/pub/css/lyrichord.css"><code>lyrichord.css</code></a></li>
+      </ul>
+      <h2>Include</h2>
+      <p class="summary">Include the following scripts on your webpage (in the same order):</p>
+      <section>
+        <article>
+          <pre class="prettyprint source linenums">
+&ltlink rel="stylesheet" type="text/css" href="[path to the directory in which you put the library CSS source code]/lyrichord.css"&gt
+&ltscript defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt&lt/script&gt
+&ltscript defer type="text/javascript" src='[path to the directory in which you put the library JavaScript source code]/lyrichord.js'&gt&lt/script&gt</pre>
+        </article>
+      </section>
+      <h2>How To Use</h2>
+      <p class="summary">A small example of how to use the library to create a song sheet (after having included the scripts above):</p>
+      <section>
+        <article>
+          <pre class="prettyprint source linenums">
+// Create a general song info instance
+const song_info = new GeneralSongInfo('Knockin On Heaven\'s Door', 'Bob Dylan', 'The Essential Bob Dylan');
+// Create the DOM element you want the song sheet to be displayed in
+const song_container = document.createElement('div');
+// Make the chords of the song.
+const G = new Chord('G', [3, 2, 0, 0, 0, 3]);
+G.add_shape([3, 5, 5, 4, 3, 3], {3: [1, 6]});
+const D = new Chord('D', [-1, -1, 0, 2, 3, 2]);
+const Am7 = new Chord('Am7', [-1, 0, 2, 0, 1, 0]);
+const C = new Chord('Am7', [-1, 3, 2, 0, 1, 0]);
+// Create a chord group
+// ** Note that in each LyricChordPair instance, the chord is to be played together with the text counterpart.
+const verse = new LyricChordGroup(
+    'VERSE',
+    [new LyricChordLine(
+        [new LyricChordPair('Mama take', G),
+         new LyricChordPair('this badge off', D),
+         new LyricChordPair('of me', Am7)]),
+     new LyricChordLine(
+        [new LyricChordPair('I can\'t', G),
+        new LyricChordPair('use it', D),
+        new LyricChordPair('anymore...', D)])
+    ]
+)
+// Create a song content instance
+const content = new SongContent([verse]);
+// Create the song sheet instance
+const song = new SongSheet(song_info, content);
+// Display the song sheet inside the container created above
+song.display(song_container);
+// Optional: add the container to the body of DOM
+const body = document.querySelector('body');
+body.appendChild(song_container)</pre></article>
+      </section>
+    </div>
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

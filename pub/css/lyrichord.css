@@ -1,0 +1,133 @@
+body {
+  font-family: "Courier New";
+  font-size: small;
+}
+
+.song-info {
+  width: fit-content;
+}
+
+.song-info h1,
+h2 {
+  padding-bottom: 0.5em;
+  margin: 0px;
+}
+
+.song-info th,
+td {
+  text-align: left;
+}
+
+.popup-description {
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+}
+
+.popup-description .popup {
+  font-weight: normal;
+  background-color: white;
+  padding: 20px;
+  opacity: 0.9;
+  min-width: 100px;
+  height: fit-content;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  cursor: default;
+}
+
+.popup-description:hover .popup {
+  visibility: visible;
+  color: black;
+}
+
+.popup-description:hover .chord-name-text {
+  background-color: lightgrey;
+}
+
+.chords-section {
+  margin-top: 20px;
+  display: block;
+  position: relative;
+}
+
+.chord-box-container {
+  display: inline-block;
+  width: 100px;
+  margin: 0px;
+}
+
+.chord-box-container-margined {
+  display: inline-block;
+  width: 100px;
+  margin: 20px;
+}
+
+.chord-box {
+  display: inline-block;
+  width: 100px;
+  border: solid;
+  float: left;
+  position: relative;
+}
+
+.carousel-page {
+  display: none;
+}
+
+.carousel-page-current {
+  display: block;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-toggle-menu {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0px;
+  margin-bottom: 20px;
+}
+
+.carousel-toggle {
+  display: inline-block;
+  cursor: pointer;
+  width: 5px;
+  height: 5px;
+  border: solid grey;
+  border-width: 1px;
+  margin: 2px;
+}
+
+.carousel-toggle-current {
+  background-color: grey;
+}
+
+.toggle-chord-section-show {
+  color: dimgray;
+  font-weight: bold;
+}
+
+.toggle-chord-section-hide {
+  color: darkgray;
+  font-weight: bold;
+}
+
+.chord-section-container {
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
