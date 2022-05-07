@@ -1,4 +1,3 @@
-# js-library-momajjed
 Heroku app link for the landing page: <a href="https://peaceful-river-42856.herokuapp.com/">https://peaceful-river-42856.herokuapp.com/</a>
 
 Link to the documentation: <a href="https://peaceful-river-42856.herokuapp.com/docs/index.html">https://peaceful-river-42856.herokuapp.com/docs/index.html</a>
